@@ -1,69 +1,153 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+* {
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  /* border: solid 1px red; */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Navbar */
+#navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 5;
 }
 
-body {
-  margin: 0;
+#logo {
+  width: 80px;
+}
+
+#static {
+  background-image: url("../assets/banner-tablet.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 400px;
+  background-attachment: fixed;
+}
+
+/* CARDS */
+#container {
+  position: absolute;
+  top: 5%;
+  width: 100%;
+  height: 100%;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  background: linear-gradient(40deg, rgba(232, 243, 255, 1), rgb(133, 180, 255) 50%, rgba(47, 89, 255, 1) 100%);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+/* CARD */
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.card {
+  margin: 25px 2vw;
+  width: 200px;
+  height: 300px;
+  background-color: white;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all .25s ease;
+  text-align: left;
+  box-shadow: 0 60px 40px rgb(0 0 0 / 8%);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.card:hover {
+  /*cambia el tamaño de la tarjeta*/
+  transform: scale(0.9);
+}
+
+.card:hover::after {
+  /*Marga la altura del espacio de degradado*/
+  height: 130px;
+}
+
+.card:hover .card-text p {
+  margin-bottom: 0px;
+  opacity: 1;
+}
+
+.card:hover img {
+  /*cambia el tamaño de la imagen cuando el cursor esta sobre*/
+  transform: scale(1.25);
+}
+
+.card::after {
+  width: 100%;
+  opacity: 1;
+  content: ' ';
+  left: 0px;
+  bottom: 0px;
+  height: 0px;
+  position: absolute;
+  background-image: linear-gradient(to bottom,
+      rgb(33 44 55 / 0),
+      rgb(33 44 55 / 0),
+      rgb(33 44 55 / 0.85));
+  transition: all 0.25s ease;
+  backdrop-filter: blur(2px);
+}
+
+.card img {
+  /*propiedades de la imagen en card*/
+  transition: all 0.25 ease;
+  height: 32vh;
+}
+
+.card .card-text {
+  /*acomoda el texto sobre la imagen*/
+  position: absolute;
+  bottom: 0px;
+  color: #324BAA;
+  padding: 20px;
+  padding-bottom: 30px;
+  text-shadow: 1px 1px #d5e8ff;
+  z-index: 2;
+}
+
+.card .card-text p {
+  /*baja la posicion del texto y el boton*/
+  font-size: 0.8rem;
+  opacity: 0;
+  /*Oculta el parrafo*/
+  margin-bottom: -170px;
+  /*Baja la posicion del texto*/
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.card .card-text p button {
+  /*propiedades del boton*/
+  padding: 7px 17px;
+  border-radius: 12px;
+  background: #324BAA;
+  border: 2px solid #324BAA;
+  color: white;
+  margin-top: 10px;
+  margin-left: auto;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: 'poppins';
+  font-size: 0.75rem;
+  outline: none;
+  z-index: 2;
+}
+
+.card .card-text p button:hover {
+  /*Propiedad del boton cuando hay un hover*/
+  background-color: #5686ff;
+  border-color: #5686ff;
+  color: white;
 }
