@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import client from '../config/contentful';
 import CardProduct from './CardProduct'
+import Footer from '../components/Footer'
 
 const ContentfulData = () => {
     const [data, setData] = useState(null);
@@ -24,7 +25,7 @@ const ContentfulData = () => {
     }
 
     return (
-        <div id="cardContainer">
+        <div id="container">
             {data.map((item) => (
                 <CardProduct
                     key={item.sys.id}
@@ -36,6 +37,7 @@ const ContentfulData = () => {
                     img={item.fields.imagenProducto.fields.file.url}>
                 </CardProduct>
             ))}
+            <Footer></Footer>
         </div>
     );
 };

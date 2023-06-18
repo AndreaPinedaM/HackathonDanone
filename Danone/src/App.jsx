@@ -8,7 +8,7 @@ import User from '../pages/User'
 function App() {
 
   return (
-    <>
+    <div id="appBody">
       <Router>
         <div id="navbar">
           <Navbar></Navbar>
@@ -20,8 +20,7 @@ function App() {
           <Route path='/usuario' element={<User />}></Route>
         </Routes>
       </Router>
-      {/* <div id="static"></div> */}
-    </>
+    </div>
   )
 }
 

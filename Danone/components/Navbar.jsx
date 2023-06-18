@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -57,11 +57,10 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 
-const pages = ['Home', 'Calorias', 'Products'];
+const pages = ['Home', 'Calorias', 'Productos'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
-    const navigate = useNavigate()
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -132,6 +131,7 @@ function ResponsiveAppBar() {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
+                            {/* Paginas cuando la Navbar se minimiza */}
                             <NavLink to='/'>
                                 <MenuItem key={pages[0]} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center" >{pages[0]}</Typography>
@@ -167,15 +167,34 @@ function ResponsiveAppBar() {
                     >
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
+                        {/* Paginas cuando el Navbar está Maximizado  */}
+                        <NavLink to='/'>
                             <Button
-                                key={page}
+                                key={pages[0]}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                {page}
+                                {pages[0]}
                             </Button>
-                        ))}
+                        </NavLink>
+                        <NavLink to='/calorias'>
+                            <Button
+                                key={pages[1]}
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: 'white', display: 'block' }}
+                            >
+                                {pages[1]}
+                            </Button>
+                        </NavLink>
+                        <NavLink to='/productos'>
+                            <Button
+                                key={pages[2]}
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: 'white', display: 'block' }}
+                            >
+                                {pages[2]}
+                            </Button>
+                        </NavLink>
                     </Box>
                     <Search>
                         <SearchIconWrapper>

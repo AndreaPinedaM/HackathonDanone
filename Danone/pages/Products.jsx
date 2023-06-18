@@ -2,7 +2,7 @@ import ContentfulData from '../components/ContentfulData'
 
 const Products = () => {
     return (
-        <div id="container">
+        <div>
             <ContentfulData></ContentfulData>
         </div>
     )
