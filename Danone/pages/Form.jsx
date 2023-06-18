@@ -1,10 +1,20 @@
 
 const Form = () => {
     return (
-        <div>
-            <h1>Form</h1>
-            <h1>Form</h1>
-            <h1>Form</h1>
+        <div className="container columns">
+            <form className="formContainer glass-effect">
+                <h1 className="textTitle">Establece un máximo de calorías diarias</h1>
+                <div className='edit'>
+                    <input
+                        type="number"
+                        id="name"
+                        name="name"
+                        min={100}
+                        required />kCal
+                    <span className="validity"></span>
+                </div>
+                <button type='submit'>Aceptar</button>
+            </form>
         </div>
     )
 }
