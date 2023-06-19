@@ -1,6 +1,7 @@
+import Details from '../components/Details'
 
+export default function ImgMediaCard({ title, id, img }) {
 
-export default function ImgMediaCard({ title, valorEnergetico, grasas, hidratos, ingredientes, img }) {
     return (
         <div className="card">
             <div id="imgContainer">
@@ -11,7 +12,8 @@ export default function ImgMediaCard({ title, valorEnergetico, grasas, hidratos,
                     {title}
                 </h3>
                 <p>
-                    <button><a>See more</a></button>
+                    <Details id={id}>
+                    </Details>
                 </p>
             </div>
         </div>
