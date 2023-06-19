@@ -84,7 +84,7 @@ function ResponsiveAppBar() {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <img src="../assets/Danone Logo Vector 1.png" id="logo"></img>
+                    <img src="https://raw.githubusercontent.com/AndreaPinedaM/HackathonDanone/main/Danone/assets/Danone%20Logo%20Vector%201.png" id="logo"></img>
                     <Typography
                         variant="h6"
                         noWrap
