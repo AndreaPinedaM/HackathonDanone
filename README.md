@@ -1,12 +1,17 @@
 # HackathonDanone
-Landing page Hackathon Mexico 2023
+Hackathon Mexico 2023
+
+Se presenta una solución para el evento #DanoneHackathonMexico utilizando las siguientes herramientas: 
 
 Stack
+
+°Javascript
+
 °Contentful
 
-°React
-
 °Vite
+
+°React
 
 °Bootstrap
 
