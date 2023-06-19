@@ -31,9 +31,11 @@ export default function BasicModal({ id }) {
             }
         };
 
-        const dataById = fetchData().filter((e) => { e.sys.id === id });
-        console.log(dataById)
+        fetchData();
     }, [id]);
+
+    const dataById = data ? data.filter((e) => e.sys.id === id) : [];
+    // console.log(dataById)
 
     if (!data) {
         return <p>Loading...</p>;
@@ -52,11 +54,19 @@ export default function BasicModal({ id }) {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
+                    <img className="ModalIMG" src={dataById[0].fields.imagenProducto.fields.file.url} alt="" />
                     <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Text in a modal
+                        {dataById[0].fields.imagenProducto.fields.title}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                        <p>Valor Energético: {dataById[0].fields.valorEnergetico}</p>
+                        <p>Grasa: {dataById[0].fields.grasas}</p>
+                        <p>Hidratos de Carbono: {dataById[0].fields.hidratosDeCarbono}</p>
+                        <p>Este producto procede de Agricultura ecológica.</p>
+                        <p>Ingredientes: {dataById[0].fields.ingredientes}</p>
+                        <div id="divBtn">
+                            <button className="closeBtn" onClick={handleClose}>Close</button>
+                        </div>
                     </Typography>
                 </Box>
             </Modal>

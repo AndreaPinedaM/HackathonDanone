@@ -3,7 +3,6 @@
   padding: 0%;
   margin: 0%;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  /* border: solid 1px red; */
 }
 
 a {
@@ -64,6 +63,13 @@ body {
   margin: 10px;
   color: #10249f;
   font-family: 'Cormorant';
+}
+
+#carouselTitle {
+  font-family: 'Cormorant';
+  font-size: 3rem;
+  color: #10249f;
+  margin: 20px;
 }
 
 /* Navbar */
@@ -182,6 +188,44 @@ body {
 #s2 {
   background-color: #e8f3ff;
   color: #10249f;
+}
+
+#s3 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #89C8F2;
+}
+
+
+.cardCarousel {
+  width: 360px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 30px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 100px 100px rgba(0, 0, 0, 0.08);
+  align-self: center;
+}
+
+.carousel .control-dots .dot {
+  box-shadow: none;
+  background: #5686ff;
+  width: 16px;
+  height: 16px;
+}
+
+.carousel .slide img {
+  width: 100%;
+  height: 100%;
+}
+
+.image-wrapper {
+  margin-bottom: 10px;
 }
 
 /* Galería sección 2 */
@@ -341,6 +385,25 @@ body {
   background-color: #5686ff;
   border-color: #5686ff;
   color: white;
+}
+
+.ModalIMG {
+  width: 100px;
+}
+
+#divBtn {
+  display: flex;
+  justify-content: end;
+}
+
+.closeBtn {
+  background-color: rgb(190, 23, 23);
+  color: aliceblue;
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 /* FOOTER  */

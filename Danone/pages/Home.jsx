@@ -1,10 +1,11 @@
-
+import Carousel from "../components/Carousel"
 
 const Home = () => {
     return (
         <div className="container">
             <section id="main">
                 <h1 className="homeTitle">Cuidamos la elaboración de nuestros productos como cuidamos a nuestra familia</h1>
+                {/* <img src="../assets/celebrandoAmexico.png" alt="" /> */}
                 <div>
                 </div>
                 <div></div>
@@ -24,9 +25,10 @@ const Home = () => {
                 <p className="homeText">En 1919 Danone creó su primer yoghurt y ahora, casi 100 años después de su nacimiento, seguimos elaborando el mismo yogur con el
                     auténtico sabor de siempre.</p>
             </section>
-            <section id="s3" className="sec">
-
-            </section>
+            <div id="s3">
+                <h2 id="carouselTitle">¡Conoce nuestros productos!</h2>
+                <Carousel />
+            </div>
         </div>
     )
 }
